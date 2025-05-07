@@ -1,7 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using WebUygulamaProje2.Utility;
+
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<UygulamaDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))); //Utility içindeki contructor için servis yazdýk.
+//Buradaki "DefaultConnection appsetting.json içindeki DC'yi ifade eder.
+//Özetle UygulamaDbContext'i kullan, bunu kullanýrken Sql server, onuda kullanýrken DConnection'ý kullan.
+
 
 var app = builder.Build();
 
