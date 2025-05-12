@@ -1,1 +1,33 @@
-﻿<h1>Kitap Türü Sayfası</h1>
+﻿@model List<KitapTuru> //KitapTuruController'dan çektiğimizi ifade eder.
+
+
+<h1>Kitap Türleri</h1>
+<!--12.05.2025-->
+<table class="table table-bordered">
+    <thead>
+
+
+        <tr>
+            <th>Id</th>
+            <th>Kitap Türü</th> 
+        </tr>
+    <thead>
+
+        <tbody>
+
+            @foreach (var kitapTuru in Model)
+            {
+                    
+                
+
+                 <tr>
+                     <td>@kitapTuru.Id</td> <!--Kütüp Türü models'da hangi propertyler kullanıldıysa onu kullan-->
+                     <td>@kitapTuru.Ad</td>
+                 </tr>
+
+
+
+            }
+        </tbody>
+
+</table>

@@ -20,7 +20,8 @@ namespace WebUygulamaProje2.Controllers
         public IActionResult Index()
         {
             List<KitapTuru> objKitapTuruList = _uygulamaDbContext.KitapTurleri.ToList(); //veri tabanına gidip kitap türleri çek ve objKitapTuruList'esine alacak.
-            return View();
+            return View(objKitapTuruList); //Liste işliyoruz parantez içine
+            //return View(); ilk hali bu 12.05.2025
         }
     }
 }
